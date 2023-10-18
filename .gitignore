@@ -10,4 +10,4 @@ typechain-types
 cache
 artifacts
 
-helper-hardhat-config.js
+helper-hardhat-config.ts
