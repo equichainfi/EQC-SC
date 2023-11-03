@@ -4,5 +4,6 @@
     "doubleQuote": true,
     "singleQuote": false,
     "trailingComma": "all",
-    "useTabs": false
+    "useTabs": false,
+    "endOfLine": "lf"
 }
