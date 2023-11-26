@@ -1,9 +1,9 @@
 {
     "tabWidth": 4,
+    "useTabs": false,
     "semi": true,
-    "doubleQuote": true,
     "singleQuote": false,
     "trailingComma": "all",
-    "useTabs": false,
-    "endOfLine": "lf"
+    "bracketSpacing": true,
+    "doubleQuote": true
 }

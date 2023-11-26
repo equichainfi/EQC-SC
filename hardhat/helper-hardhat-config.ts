@@ -1,4 +1,4 @@
-const networkConfig = {
+export const networkConfig = {
     default: {
         name: "hardhat",
         keepersUpdateInterval: "30",
@@ -27,22 +27,9 @@ const networkConfig = {
     },
 };
 
-const developmentChains = ["hardhat", "localhost"];
-const VERIFICATION_BLOCK_CONFIRMATIONS = 6;
-const frontEndContractsFile =
-    "../nextjs-nft-marketplace-moralis-fcc/constants/networkMapping.json";
-const frontEndContractsFile2 =
-    "../nextjs-nft-marketplace-thegraph-fcc/constants/networkMapping.json";
-const frontEndAbiLocation = "../nextjs-nft-marketplace-moralis-fcc/constants/";
-const frontEndAbiLocation2 =
-    "../nextjs-nft-marketplace-thegraph-fcc/constants/";
-
-module.exports = {
-    networkConfig,
-    developmentChains,
-    VERIFICATION_BLOCK_CONFIRMATIONS,
-    frontEndContractsFile,
-    frontEndContractsFile2,
-    frontEndAbiLocation,
-    frontEndAbiLocation2,
-};
+export const developmentChains: string[] = ["hardhat", "localhost"];
+export const VERIFICATION_BLOCK_CONFIRMATIONS: number = 6;
+export const frontEndContractsFile: string =
+    "../equichain-webapp/src/lib/contracts/networkMapping.json";
+export const frontEndAbiLocations: string =
+    "../equichain-webapp/src/lib/contracts/abi";
