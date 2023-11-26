@@ -6,19 +6,24 @@
     "author": "_kvbialka917 <113932706+OlivierK07@users.noreply.github.com>",
     "license": "MIT",
     "scripts": {
-        "prettier": "prettier --write ."
+        "format": "prettier --write ."
     },
     "devDependencies": {
+        "@chainlink/contracts": "^0.8.0",
         "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
         "@nomicfoundation/hardhat-toolbox-viem": "^2.0.0",
         "@nomicfoundation/hardhat-verify": "^2.0.0",
         "@nomicfoundation/hardhat-viem": "^1.0.0",
+        "@openzeppelin/contracts": "^5.0.0",
         "@types/chai": "^4.2.0",
         "@types/chai-as-promised": "^7.1.6",
         "@types/mocha": ">=9.1.0",
         "@types/node": ">=16.0.0",
         "chai": "^4.2.0",
+        "dotenv": "^16.3.1",
         "hardhat": "^2.14.0",
+        "hardhat-contract-sizer": "^2.10.0",
+        "hardhat-deploy": "^0.11.44",
         "hardhat-gas-reporter": "^1.0.8",
         "prettier": "^3.1.0",
         "solhint": "^4.0.0",
