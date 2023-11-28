@@ -13,21 +13,23 @@ contract PropertyNft is ERC721 {
 
     constructor() ERC721("PropertyNft", "PNFT") {
         s_tokenCounter = 0;
-    }`
+    }
 
     function mint(uint256 tokeId, address to) public {
         _safeMint(msg.sender, tokeId);
+        emit PropertyMinted(tokeId, to);
+        s_tokenCounter++;
     }
 
-    function tokenURI(
-        uint256 tokenId
-    ) public view override returns (string memory) {
-        if (_exists(tokenId)) {
-            return i_uri;
-        } else {
-            revert PropertyNft__NonexistentToken(tokenId);
-        }
-    }
+    // function tokenURI(
+    //     uint256 tokenId
+    // ) public view override returns (string memory) {
+    //     if (_exists(tokenId)) {
+    //         return i_uri;
+    //     } else {
+    //         revert PropertyNft__NonexistentToken(tokenId);
+    //     }
+    // }
 
     function getTokenCounter() public view returns (uint256) {
         return s_tokenCounter;
