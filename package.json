@@ -2,14 +2,18 @@
     "name": "equichain-webapp-blockend",
     "version": "1.0.0",
     "type": "module",
-    "repository": "https://github.com/equichainfi/equichain-webapp-blockend.git",
-    "author": "_kvbialka917 <113932706+OlivierK07@users.noreply.github.com>",
+    "author": "equichainfi",
     "license": "MIT",
     "scripts": {
-        "format": "prettier --write ."
+        "fmt": "prettier --write ."
+    },
+    "engines": {
+        "node": ">=16.0.0"
     },
     "devDependencies": {
         "@chainlink/contracts": "^0.8.0",
+        "@commitlint/cli": "^18.4.3",
+        "@commitlint/config-conventional": "^18.4.3",
         "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
         "@nomicfoundation/hardhat-toolbox-viem": "^2.0.0",
         "@nomicfoundation/hardhat-verify": "^2.0.0",
@@ -25,11 +29,54 @@
         "hardhat-contract-sizer": "^2.10.0",
         "hardhat-deploy": "^0.11.44",
         "hardhat-gas-reporter": "^1.0.8",
+        "husky": "^8.0.3",
         "prettier": "^3.1.0",
         "solhint": "^4.0.0",
         "solidity-coverage": "^0.8.0",
         "ts-node": ">=8.0.0",
         "typescript": "~5.0.4",
         "viem": "^1.15.1"
-    }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/equichainfi/equichain-webapp-blockend"
+    },
+    "contributors": [
+        "Olivier Kobialka <olivier.kobialka@gmail.com>"
+    ],
+    "keywords": [
+        "blockchain",
+        "ethereum",
+        "hardhat",
+        "smart contracts",
+        "solidity",
+        "equichain",
+        "RWA",
+        "DeFi",
+        "tokenization"
+    ],
+    "dependencies": {
+        "commitlint": "^18.4.3"
+    },
+    "commitlint": {
+        "rules": {
+            "references-empty": [
+                2,
+                "never"
+            ]
+        },
+        "parserPreset": {
+            "parserOpts": {
+                "issuePrefixes": [
+                    "EQC-"
+                ]
+            }
+        }
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    },
+    "packageManager": "yarn@4.0.2"
 }

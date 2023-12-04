@@ -1,6 +1,7 @@
 node_modules
 .env
 .solhint.json
+.github
 
 # Hardhat files
 /cache
