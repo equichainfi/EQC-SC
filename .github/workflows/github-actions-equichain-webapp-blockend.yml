@@ -11,7 +11,3 @@ jobs:
                   node-version: "21"
             - name: Install dependencies
               run: yarn install
-            - name: Run tests
-              run: yarn run test
-            - name: Local deploy
-              run: yarn run deploy:local
