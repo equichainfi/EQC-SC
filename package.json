@@ -5,7 +5,7 @@
     "author": "equichainfi",
     "license": "MIT",
     "scripts": {
-        "format": "prettier --write ."
+        "fmt": "prettier --write ."
     },
     "engines": {
         "node": ">=16.0.0"
