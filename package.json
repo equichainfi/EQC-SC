@@ -5,7 +5,9 @@
     "author": "equichainfi",
     "license": "MIT",
     "scripts": {
-        "fmt": "prettier --write ."
+        "fmt": "prettier --write .",
+        "test": "",
+        "deploy:local": ""
     },
     "engines": {
         "node": ">=16.0.0"

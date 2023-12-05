@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-yarn run fmt
-
+yarn run fmt && yarn run test && yarn run deploy:local
