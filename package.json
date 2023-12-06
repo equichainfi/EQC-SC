@@ -5,13 +5,17 @@
     "author": "equichainfi",
     "license": "MIT",
     "scripts": {
-        "fmt": "prettier --write ."
+        "fmt": "prettier --write .",
+        "test": "",
+        "deploy:local": ""
     },
     "engines": {
         "node": ">=16.0.0"
     },
     "devDependencies": {
         "@chainlink/contracts": "^0.8.0",
+        "@commitlint/cli": "^18.4.3",
+        "@commitlint/config-conventional": "^18.4.3",
         "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
         "@nomicfoundation/hardhat-toolbox-viem": "^2.0.0",
         "@nomicfoundation/hardhat-verify": "^2.0.0",
@@ -27,6 +31,7 @@
         "hardhat-contract-sizer": "^2.10.0",
         "hardhat-deploy": "^0.11.44",
         "hardhat-gas-reporter": "^1.0.8",
+        "husky": "^8.0.3",
         "prettier": "^3.1.0",
         "solhint": "^4.0.0",
         "solidity-coverage": "^0.8.0",
@@ -51,5 +56,29 @@
         "RWA",
         "DeFi",
         "tokenization"
-    ]
+    ],
+    "dependencies": {
+        "commitlint": "^18.4.3"
+    },
+    "commitlint": {
+        "rules": {
+            "references-empty": [
+                2,
+                "never"
+            ]
+        },
+        "parserPreset": {
+            "parserOpts": {
+                "issuePrefixes": [
+                    "EQC-"
+                ]
+            }
+        }
+    },
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+        }
+    },
+    "packageManager": "yarn@4.0.2"
 }
