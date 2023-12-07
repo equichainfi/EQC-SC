@@ -1,6 +1,6 @@
 import "@nomicfoundation/hardhat-toolbox-viem";
 import "@nomiclabs/hardhat-ethers";
-import "@nomiclabs/hardhat-etherscan";
+// import "@nomiclabs/hardhat-etherscan";
 import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
 import "dotenv/config";
@@ -8,12 +8,13 @@ import "hardhat-contract-sizer";
 import "hardhat-deploy";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
+// import "tsconfig-paths/register";
 
 const config = {
     solidity: {
         compilers: [
             {
-                version: "0.8.23",
+                version: "0.8.21",
             },
             {
                 version: "0.8.7",
@@ -45,6 +46,13 @@ const config = {
             //   },
             saveDeployments: true,
             chainId: 1,
+        },
+    },
+    etherscan: {
+        // yarn hardhat verify --network <NETWORK> <CONTRACT_ADDRESS> <CONSTRUCTOR_PARAMETERS>
+        apiKey: {
+            sepolia: process.env.ETHERSCAN_API_KEY,
+            polygon: process.env.POLYGONSCAN_API_KEY,
         },
     },
     namedAccounts: {
