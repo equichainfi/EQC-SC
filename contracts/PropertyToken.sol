@@ -8,6 +8,10 @@ import "@openzeppelin/contracts/access/manager/AccessManaged.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Votes.sol";
 
+/// @title PropertyToken
+/// @author Olivier Kobialka, 2023
+/// @notice Contract for basic ERC-20 token simulation for marketplace
+
 contract PropertyToken is
     ERC20,
     ERC20Burnable,
@@ -40,8 +44,6 @@ contract PropertyToken is
         _mint(to, amount);
     }
 
-    // The following functions are overrides required by Solidity.
-
     function _update(
         address from,
         address to,
@@ -50,12 +52,9 @@ contract PropertyToken is
         super._update(from, to, value);
     }
 
-    function nonces(address owner)
-        public
-        view
-        override(ERC20Permit, Nonces)
-        returns (uint256)
-    {
+    function nonces(
+        address owner
+    ) public view override(ERC20Permit, Nonces) returns (uint256) {
         return super.nonces(owner);
     }
 }
