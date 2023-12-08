@@ -1,14 +1,16 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.21;
 
-/// @title Marketplace
-/// @author Olivier Kobialka, 2023
-/// @notice Contract for ERC-20 && ERC-721 token simulation for marketplace
+
 
 error Marketplace__OnlyMarketplaceCanCallThisFunction(address caller);
 error Marketplace__PropertyNotListed(address nftAddress, uint256 tokenId);
 
 contract Marketplace {
+    /// @title Marketplace
+    /// @author Olivier Kobialka
+    /// @notice Contract for ERC-20 and ERC-721 token simulation for the marketplace
+    
     //////////////////////////
     /// Events Declaration ///
     //////////////////////////
@@ -30,7 +32,7 @@ contract Marketplace {
         address indexed nft,
         uint256 tokenId,
         uint256 newPrice,
-        address newOwner,
+        address newOwner
     );
     event PropertyCanceled(
         address indexed owner,
@@ -49,37 +51,46 @@ contract Marketplace {
         uint256 tokenId
     );
 
+    /// @notice Structure for listed items
+    struct Listing {
+        uint256 quantity;
+        address payToken;
+        uint256 pricePerItem;
+        uint256 startingTime;
+    }
+
+    /// @notice NftAddress -> Token ID -> Owner -> Listing item
+    mapping(address => mapping(uint256 => mapping(address => Listing)))
+        public listings;
+
     uint16 public marketplaceFee;
     address payable public feeRecipient;
 
     modifier onlyMarketplace() {
-        if (msg.sender != address(this)) {
-            revert Marketplace__OnlyMarketplaceCanCallThisFunction(
-                msg.sender
-            );
-        }
+        require(
+            msg.sender == address(this),
+            "Marketplace__OnlyMarketplaceCanCallThisFunction"
+        );
         _;
     }
 
     modifier notListed(
         address _nftAddress,
         uint256 _tokenId,
-        address _owner,
+        address _owner
     ) {
-        Listing memory listing = listings[_nftAddress][_tokenId];
-        if (listing.quantity == 0) {
-            revert Marketplace__PropertyNotListed(_nftAddress, _tokenId);
-        }
+        Listing memory listing = listings[_nftAddress][_tokenId][_owner];
+        require(listing.quantity == 0, "Marketplace__PropertyNotListed");
+        _;
     }
 
     /// @notice Contract Initialization
     function initialize(
-        address payable _feeRecipient, uint16 _marketplaceFee
-    ) public initializer {
+        address payable _feeRecipient,
+        uint16 _marketplaceFee
+    ) external {
         marketplaceFee = _marketplaceFee;
         feeRecipient = _feeRecipient;
-
-
     }
 
     /// @notice Method for listing a property
@@ -88,14 +99,10 @@ contract Marketplace {
         uint256 _tokenId,
         address _payToken,
         uint256 _price,
-        uint256 _expiresAt,
         uint256 _startedAt
-    ) external notListed(
-        _nftAddress,
-        _tokenId,
-        msg.sender
-    ) {
-        
+    ) external notListed(_nftAddress, _tokenId, msg.sender) {
+        // Add your listing logic here
+        emit PropertyListed(msg.sender, _nftAddress, _tokenId);
     }
 
     ////////////////////////////
@@ -106,5 +113,8 @@ contract Marketplace {
         address _nftAddress,
         uint256 _tokenId,
         address _owner
-    ) private {}
+    ) private {
+        // Add your cancellation logic here
+        emit PropertyCanceled(_owner, _nftAddress, _tokenId);
+    }
 }
