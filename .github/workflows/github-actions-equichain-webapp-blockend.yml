@@ -1,13 +1,27 @@
 name: equichain.fi blockchain CI (GA)
 run-name: ${{ github.actor }} is testing out CI (GA) 🚀
-on: [push, pull_request]
+on: [push, pull_request, "pull_request_target", "workflow_dispatch"]
 jobs:
     CI:
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
             - name: Set up Yarn
               uses: actions/setup-node@v4
               with:
-                  node-version: "21"
+                  node-version: "18"
+
             - name: Install dependencies
               run: yarn install
+            # - name: Start node
+            #   run: yarn hardhat node
+            # - name: Compile
+            #   run: yarn cmp
+            # - name: Hardhat Test
+            #   uses: ambersun1234/hardhat-test-action@v1
+            #   with:
+            #       network: hardhat
+            # - name: Deploy
+            #   run: yarn deploy:local

@@ -28,7 +28,7 @@ const config = {
     networks: {
         hardhat: {
             // forking: {
-            //   url: MAINNET_RPC_URL
+            //   url: RPC_URL
             // }
             chainId: 31337,
         },
@@ -36,7 +36,7 @@ const config = {
             chainId: 31337,
         },
         mainnet: {
-            url: process.env.MAINNET_RPC_URL,
+            url: process.env.RPC_URL,
             accounts:
                 process.env.PRIVATE_KEY !== undefined
                     ? [process.env.PRIVATE_KEY]
@@ -54,6 +54,9 @@ const config = {
             sepolia: process.env.ETHERSCAN_API_KEY,
             polygon: process.env.POLYGONSCAN_API_KEY,
         },
+    },
+    sourcify: {
+        enabled: true,
     },
     namedAccounts: {
         deployer: {
