@@ -12,12 +12,12 @@ import { PropertyNft__factory } from "../typechain-types";
  */
 export default async function updateFrontend(): Promise<void> {
     if (process.env.UPDATE_FRONTEND) {
-        console.log("Updating frontend contract information");
+        console.log("[ Updating frontend contract information ]");
 
         await updateContractAddresses();
         await updateAbi();
 
-        console.log("Frontend contract information updated");
+        console.log("[ Frontend contract information updated ] ✅");
     }
 }
 

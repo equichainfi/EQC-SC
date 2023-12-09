@@ -9,23 +9,21 @@ export default async function verify(
     address: string,
     constructorArguments: any[],
 ): Promise<void> {
-    console.log(
-        "=========================== Veryfing ===========================",
-    );
+    console.log("[ Veryfing ]");
 
     try {
         await run("verify:verify", {
             address,
             constructorArguments,
         });
-        console.log(
-            "=========================== Contract verified ===========================",
-        );
+        console.log("[ Contract verified ] ✅");
     } catch (error: any) {
-        if (error.message.includes("Contract source code already verified")) {
-            console.log("Contract already verified");
+        if (
+            error.message.includes("[ Contract source code already verified ]")
+        ) {
+            console.log("[ Contract already verified ] ✅");
         } else {
-            console.log(error);
+            console.log("❌ [ ERROR ] ❌" + error);
         }
     }
 }

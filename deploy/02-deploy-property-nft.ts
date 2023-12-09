@@ -22,7 +22,7 @@ export default async function deployProperty({
         : VERIFICATION_BLOCK_CONFIRMATIONS;
 
     log(
-        "=========================== Deploying Property ===========================",
+        "[ Deploying Property ]",
     );
 
     const args: any[] = [];
@@ -44,6 +44,6 @@ export default async function deployProperty({
     }
 
     log(
-        "=========================== Property Deployed ===========================",
+        "[ PropertyNft deployed ] ✅",
     );
 }
