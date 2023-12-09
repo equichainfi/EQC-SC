@@ -5,12 +5,12 @@
     "license": "MIT",
     "scripts": {
         "fmt": "prettier --write .",
-        "test": "",
-        "deploy:local": "",
+        "test": "hardhat test",
+        "deploy:local": "hardhat deploy --network localhost",
         "cmp": "hardhat compile"
     },
     "engines": {
-        "node": ">=16.0.0"
+        "node": ">=18.0.0"
     },
     "devDependencies": {
         "@chainlink/contracts": "^0.8.0",

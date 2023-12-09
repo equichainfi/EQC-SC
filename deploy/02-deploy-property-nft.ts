@@ -1,12 +1,11 @@
 import { network } from "hardhat";
-import { Network } from "hardhat/types";
 import {
     developmentChains,
     VERIFICATION_BLOCK_CONFIRMATIONS,
 } from "../helper-hardhat-config";
 import verify from "../utils/verify";
 
-export default async function deployProperty({
+export default async function deployPropertyNft({
     getNamedAccounts,
     deployments,
 }: {
@@ -21,13 +20,16 @@ export default async function deployProperty({
         ? 1
         : VERIFICATION_BLOCK_CONFIRMATIONS;
 
-    log(
-        "[ Deploying Property ]",
-    );
+    log("[ Deploying Property ]");
 
-    const args: any[] = [];
+    // todo check if this is correct
+    const args: any[] = [
+        "0x9a116E22E1247B8cbEb4693B2BcF20c21C477394",
+        "PropertyNft",
+        "PNFT",
+    ];
 
-    const propertyNft: any = await deploy("PropertyNft", {
+    const propertyNft = await deploy("PropertyNft", {
         from: deployer,
         args,
         log: true,
@@ -38,12 +40,10 @@ export default async function deployProperty({
         !developmentChains.includes(network.name) &&
         process.env.ETHERSCAN_API_KEY
     ) {
-        log("Verifying PropertyNft contract on Etherscan");
+        log("[ Verifying PropertyNft contract on Etherscan ]");
 
         await verify(propertyNft.address, args);
     }
 
-    log(
-        "[ PropertyNft deployed ] ✅",
-    );
+    log("[ PropertyNft deployed ] ✅");
 }
