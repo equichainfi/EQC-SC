@@ -4,10 +4,10 @@
     "author": "equichainfi",
     "license": "MIT",
     "scripts": {
-        "fmt": "prettier --write .",
-        "test": "hardhat test",
-        "deploy:local": "hardhat deploy --network localhost",
-        "cmp": "hardhat compile"
+        "fmt": "yarn prettier --write .",
+        "test": "yarn hardhat test",
+        "deploy:local": "yarn hardhat deploy --network localhost",
+        "cmp": "yarn hardhat compile"
     },
     "engines": {
         "node": ">=18.0.0"

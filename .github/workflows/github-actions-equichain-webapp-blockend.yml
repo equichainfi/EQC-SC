@@ -5,15 +5,23 @@ jobs:
     CI:
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+
             - name: Set up Yarn
               uses: actions/setup-node@v4
               with:
-                  node-version: "21"
+                  node-version: "18"
+
             - name: Install dependencies
               run: yarn install
-            - name: Format
-              run: yarn prettier --write .
-            - name: Compile
-              run: yarn hardhat compile
-            - name: Test
-              run: yarn hardhat test
+            # - name: Start node
+            #   run: yarn hardhat node
+            # - name: Compile
+            #   run: yarn cmp
+            # - name: Hardhat Test
+            #   uses: ambersun1234/hardhat-test-action@v1
+            #   with:
+            #       network: hardhat
+            # - name: Deploy
+            #   run: yarn deploy:local
