@@ -12,8 +12,8 @@ jobs:
             - name: Install dependencies
               run: yarn install
             - name: Format
-              run: yarn fmt
+              run: yarn prettier --write .
             - name: Compile
-              run: yarn cmp
+              run: yarn hardhat compile
             - name: Test
-              run: yarn test
+              run: yarn hardhat test
