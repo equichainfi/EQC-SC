@@ -1244,6 +1244,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nomiclabs/hardhat-etherscan@npm:^3.1.8":
+  version: 3.1.8
+  resolution: "@nomiclabs/hardhat-etherscan@npm:3.1.8"
+  dependencies:
+    "@ethersproject/abi": "npm:^5.1.2"
+    "@ethersproject/address": "npm:^5.0.2"
+    cbor: "npm:^8.1.0"
+    chalk: "npm:^2.4.2"
+    debug: "npm:^4.1.1"
+    fs-extra: "npm:^7.0.1"
+    lodash: "npm:^4.17.11"
+    semver: "npm:^6.3.0"
+    table: "npm:^6.8.0"
+    undici: "npm:^5.14.0"
+  peerDependencies:
+    hardhat: ^2.0.4
+  checksum: 7869e14506794f4ca2da147b99e0775a1e7d1afc3fd35fae53d65a1a01df67748a583e99fd4ef557af2cba4ed59ed1400510ef72b0728d64de67dbbc5742746f
+  languageName: node
+  linkType: hard
+
 "@nomiclabs/hardhat-waffle@npm:^2.0.6":
   version: 2.0.6
   resolution: "@nomiclabs/hardhat-waffle@npm:2.0.6"
@@ -3197,6 +3217,7 @@ __metadata:
     "@nomicfoundation/hardhat-verify": "npm:^2.0.0"
     "@nomicfoundation/hardhat-viem": "npm:^1.0.0"
     "@nomiclabs/hardhat-ethers": "npm:^2.2.3"
+    "@nomiclabs/hardhat-etherscan": "npm:^3.1.8"
     "@nomiclabs/hardhat-waffle": "npm:^2.0.6"
     "@openzeppelin/contracts": "npm:^5.0.0"
     "@typechain/ethers-v6": "npm:^0.5.1"

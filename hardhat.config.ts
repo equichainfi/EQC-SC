@@ -55,6 +55,9 @@ const config = {
             polygon: process.env.POLYGONSCAN_API_KEY,
         },
     },
+    sourcify: {
+        enabled: true,
+    },
     namedAccounts: {
         deployer: {
             default: 0,
