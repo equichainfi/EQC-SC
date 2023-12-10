@@ -2773,6 +2773,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"commander@npm:^8.1.0":
+  version: 8.3.0
+  resolution: "commander@npm:8.3.0"
+  checksum: 8b043bb8322ea1c39664a1598a95e0495bfe4ca2fad0d84a92d7d1d8d213e2a155b441d2470c8e08de7c4a28cf2bc6e169211c49e1b21d9f7edc6ae4d9356060
+  languageName: node
+  linkType: hard
+
 "commitlint@npm:^18.4.3":
   version: 18.4.3
   resolution: "commitlint@npm:18.4.3"
@@ -3237,6 +3244,7 @@ __metadata:
     hardhat-gas-reporter: "npm:^1.0.8"
     husky: "npm:^8.0.3"
     prettier: "npm:^3.1.0"
+    solc: "npm:0.8.23-fixed"
     solhint: "npm:^4.0.0"
     solidity-coverage: "npm:^0.8.5"
     ts-node: "npm:^10.9.1"
@@ -6772,6 +6780,23 @@ __metadata:
   bin:
     solcjs: solcjs
   checksum: 28405adfba1f55603dc5b674630383bfbdbfab2d36deba2ff0a90c46cbc346bcabf0ed6175e12ae3c0b751ef082d0405ab42dcc24f88603a446e097a925d7425
+  languageName: node
+  linkType: hard
+
+"solc@npm:0.8.23-fixed":
+  version: 0.8.23-fixed
+  resolution: "solc@npm:0.8.23-fixed"
+  dependencies:
+    command-exists: "npm:^1.2.8"
+    commander: "npm:^8.1.0"
+    follow-redirects: "npm:^1.12.1"
+    js-sha3: "npm:0.8.0"
+    memorystream: "npm:^0.3.1"
+    semver: "npm:^5.5.0"
+    tmp: "npm:0.0.33"
+  bin:
+    solcjs: solc.js
+  checksum: 8c8b5ac46c5fe6d3eb809216db8ad735500d68f4fd64a9e3830df2bd68ff1892e83d2119e561f5c1376782f8ffc2d70c79ed1f954d8dfd4aef8f01b1ee0b225f
   languageName: node
   linkType: hard
 

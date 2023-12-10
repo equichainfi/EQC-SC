@@ -4,8 +4,7 @@ import { assert, expect } from "chai";
 import { describe } from "mocha";
 
 if (!developmentChains.includes(network.name)) {
-    console.log("skipping propertyNft tests");
-    describe.skip("PropertyNft Unit Tests", function () {});
+    console.log("skipping propertyToken tests");
+    describe.skip("PropertyToken Unit Tests", function () {});
 } else {
-    
 }
