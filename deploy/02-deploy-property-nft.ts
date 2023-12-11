@@ -3,7 +3,7 @@ import {
     developmentChains,
     VERIFICATION_BLOCK_CONFIRMATIONS,
 } from "../helper-hardhat-config";
-import verify from "../utils/verify";
+import { verify } from "../utils/verify";
 
 export default async function deployPropertyNft({
     getNamedAccounts,
@@ -23,7 +23,7 @@ export default async function deployPropertyNft({
     log("[ Deploying Property ]");
 
     // todo check if this is correct
-    const args: any[] = [
+    const args: string[] = [
         "0x9a116E22E1247B8cbEb4693B2BcF20c21C477394",
         "PropertyNft",
         "PNFT",

@@ -1,15 +1,13 @@
 import { run } from "hardhat";
 import { log } from "console";
+import { Verify } from "../types/functions";
 
 /**
  * @augments address The address of the contract to verify
  * @augments constructorArguments The constructor arguments of the contract
  */
 
-export default async function verify(
-    address: string,
-    constructorArguments: any[],
-): Promise<void> {
+export const verify: Verify = async (address, constructorArguments) => {
     log("[ Veryfing ]");
 
     try {
@@ -25,4 +23,4 @@ export default async function verify(
             log("❌ [ ERROR ] ❌" + error);
         }
     }
-}
+};

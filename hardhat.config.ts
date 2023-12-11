@@ -8,7 +8,6 @@ import "hardhat-contract-sizer";
 import "hardhat-deploy";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
-// import "tsconfig-paths/register";
 
 const config = {
     solidity: {
@@ -27,9 +26,9 @@ const config = {
     defaultNetwork: "hardhat",
     networks: {
         hardhat: {
-            // forking: {
-            //   url: RPC_URL
-            // }
+            forking: {
+                url: process.env.RPC_URL,
+            },
             chainId: 31337,
         },
         localhost: {
