@@ -47,3 +47,5 @@ export default async function deployPropertyNft({
 
     log("[ PropertyNft deployed ] ✅");
 }
+
+export const tags: string[] = ["all", "PropertyNft"];

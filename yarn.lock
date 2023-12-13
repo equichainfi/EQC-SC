@@ -1244,7 +1244,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nomiclabs/hardhat-etherscan@npm:^3.1.8":
+"@nomiclabs/hardhat-etherscan@npm:^3.1.7":
   version: 3.1.8
   resolution: "@nomiclabs/hardhat-etherscan@npm:3.1.8"
   dependencies:
@@ -3238,7 +3238,7 @@ __metadata:
     "@nomicfoundation/hardhat-verify": "npm:^2.0.0"
     "@nomicfoundation/hardhat-viem": "npm:^1.0.0"
     "@nomiclabs/hardhat-ethers": "npm:^2.2.3"
-    "@nomiclabs/hardhat-etherscan": "npm:^3.1.8"
+    "@nomiclabs/hardhat-etherscan": "npm:^3.1.7"
     "@nomiclabs/hardhat-waffle": "npm:^2.0.6"
     "@openzeppelin/contracts": "npm:^5.0.0"
     "@typechain/ethers-v6": "npm:^0.5.1"

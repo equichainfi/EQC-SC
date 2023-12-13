@@ -5,3 +5,5 @@ export default async function deployPropertyToken() {
 
     log("[ PropertyToken deployed ] ✅");
 }
+
+export const tags: string[] = ["all", "PropertyToken"];
