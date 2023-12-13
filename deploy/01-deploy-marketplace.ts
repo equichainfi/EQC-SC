@@ -5,3 +5,5 @@ export default async function depoloyMarketplace() {
 
     log("[ Marketplace deployed ] ✅");
 }
+
+export const tags: string[] = ["all", "Marketplace"];
